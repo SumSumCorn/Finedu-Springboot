@@ -17,25 +17,4 @@ public class HelloController {
         model.addAttribute("name", name);
         return "hello-template";
     }
-
-    @GetMapping("hello-string")
-    @ResponseBody
-    public String helloString(String name) {
-        return String.format("Hello, %s", name);
-    }
-
-    @GetMapping("hello-map")
-    @ResponseBody
-    public Map<String, Object> helloMap(String name) {
-        HashMap<String, Object> m = new HashMap<>();
-        m.put("name", name);
-        return m;
-    }
-
-    @GetMapping("hello-object")
-    @ResponseBody
-    public Hello helloObject(String name) {
-        Hello h = new Hello(name);
-        return h;
-    }
 }
